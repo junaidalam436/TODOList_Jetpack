@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -59,6 +60,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +70,35 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.kotlinStdlib)
+    implementation(libs.composeUi)
+    implementation(libs.composeMaterial)
+    implementation(libs.composeUiTooling)
+    implementation(libs.lifecycleRuntime)
+    implementation(libs.activityCompose)
+    implementation(libs.roomRuntime)
+    kapt(libs.roomCompiler)
+    implementation(libs.roomKtx)
+    implementation(libs.coroutinesCore)
+    implementation(libs.coroutinesAndroid)
+    implementation(libs.hiltAndroid)
+    kapt(libs.hiltCompiler)
+    implementation(libs.hiltNavigationCompose)
+
+
+    // AndroidX Test - Core library for unit testing
+    testImplementation(libs.androidxTestCore)
+
+    // AndroidX Test - Arch Core Testing
+    testImplementation(libs.archCoreTesting)
+
+    // Coroutines Test library
+    testImplementation(libs.coroutinesTest)
+
+    // MockK for mocking
+    testImplementation(libs.mockk)
+
+    // (Optional) Espresso and Compose testing dependencies for UI tests
+    androidTestImplementation(libs.composeUiTestJUnit4)
+    androidTestImplementation(libs.espressoCore)
 }
